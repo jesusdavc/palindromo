@@ -3,13 +3,16 @@ alert('Bienvenido al verificador de palíndromo.')
 
 function palindromo(palabra){
     let espacio = " ";
+    /*/[\u0300-\u036f]/ rango de caracteres NFD
+    
+    */
     palabra = palabra.replace(new RegExp(espacio, "g"), "");
-    console.log(palabra)
+    palabra = palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "" );
     palabra = palabra.toLowerCase();
     let palabraArray = Array.from(palabra);
     let palabraArrayRev = palabraArray.reverse();
     let palabraRev = palabraArrayRev.join('');
-    console.log(palabraRev)
+    
     if (palabra == palabraRev){
         return true}
     else{
@@ -21,7 +24,7 @@ let palabra = prompt('Escriba una palabra');
 
 let esPalabra = palindromo(palabra);
 
-if(esPalabra == true){
+if(esPalabra){
     alert('Es palíndromo')
 }else{
     alert('No es palíndromo')
