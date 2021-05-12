@@ -3,6 +3,7 @@ alert('Bienvenido al verificador de palíndromo.')
 
 function palindromo(palabra){
     let espacio = " ";
+
     let acentos = /[\u0300-\u036f]/
     /*/[\u0300-\u036f]/ rango de caracteres NFD*/
     palabra = palabra.replace(new RegExp(espacio, "g"), "");
