@@ -1,30 +1,30 @@
 alert('Bienvenido al verificador de palíndromo.')
 
 
-function palindromo(palabra){
-    let espacio = " ";
+function palindromo(word){
+    let space = " ";
 
-    let acentos = /[\u0300-\u036f]/
+    let special = /[\u0300-\u036f]/
     /*/[\u0300-\u036f]/ rango de caracteres NFD*/
-    palabra = palabra.replace(new RegExp(espacio, "g"), "");
-    palabra = palabra.normalize("NFD").replace(new RegExp(acentos, "g"), "" );
-    palabra = palabra.toLowerCase();
-    let palabraArray = Array.from(palabra);
-    let palabraArrayRev = palabraArray.reverse();
-    let palabraRev = palabraArrayRev.join('');
+    word = word.replace(new RegExp(space, "g"), "");
+    word = word.normalize("NFD").replace(new RegExp(special, "g"), "" );
+    word = word.toLowerCase();
+    let wordArray = Array.from(word);
+    let wordArrayRev = wordArray.reverse();
+    let wordRev = wordArrayRev.join('');
     
-    if (palabra == palabraRev){
+    if (word == wordRev){
         return true}
     else{
         return false
     }
 }
 
-let palabra = prompt('Escriba una palabra o frase');
+let word = prompt('Escriba una palabra o frase');
 
-let esPalabra = palindromo(palabra);
+let isWord = palindromo(word);
 
-if(esPalabra){
+if(isWord){
     alert('Es palíndromo')
 }else{
     alert('No es palíndromo')
