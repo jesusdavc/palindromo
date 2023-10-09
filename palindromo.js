@@ -1,4 +1,4 @@
-alert('Bienvenido al verificador de palíndromo.')
+alert('Welcome to palindrome verifier')
 
 
 function palindrome(word){
