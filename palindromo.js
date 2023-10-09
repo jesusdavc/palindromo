@@ -1,7 +1,7 @@
 alert('Bienvenido al verificador de palíndromo.')
 
 
-function palindromo(word){
+function palindrome(word){
     let space = " ";
 
     let special = /[\u0300-\u036f]/
@@ -22,7 +22,7 @@ function palindromo(word){
 
 let word = prompt('Escriba una palabra o frase');
 
-let isWord = palindromo(word);
+let isWord = palindrome(word);
 
 if(isWord){
     alert('Es palíndromo')
